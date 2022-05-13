@@ -53,12 +53,15 @@ df_grants_year = pd.read_sql('''SELECT j.year, SUM(p.ecContribution) AS grants
     WHERE p.country='{}'
     GROUP BY j.year '''.format(country), conn)
 
+df_year=pd.read_sql('''SELECT year  AS year
+    FROM 'projects
+    WHERE year = '{}' '''
 
 #grants
 st.subheader(f'Yearly EC contribution in {ct} (€)')
 st.bar_chart(dfs['grants'])
-st.xlabel(df_grants_year)
-
+st.xlabel(df_year)
+                    
 #participants
 st.subheader(f'Participants in {ct}')
 st.dataframe(dfs['participants'])
