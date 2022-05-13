@@ -1,7 +1,6 @@
 import sqlite3 
 import pandas as pd 
 import streamlit as st
-from sqlite3.dbapi2 import DatabaseError
 from PIL import Image
 
 #colnames={c:c for c in list(df_countries)}
